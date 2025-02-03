@@ -1,3 +1,20 @@
+#*****************************************************************************
+# Author:       	AJ Alstadt
+# Assignment:       Assignment 2
+# Date:         	2/1/2025
+# Description:  	Rock, Paper, Scissors: Python Edition.
+#                   This program allows the user to play rock, paper,
+#                   scissors against a computer, and keeps score.
+#                   Includes error-handling.
+# Input:        	Player moves, miscellaneous additional input.
+# Output:       	Randomized computer moves. Updated score. Cheeky messages.
+# Sources:      	LJ helped by showing me his project. Assignment 2
+#                   instructions helped with formatting.
+# Notes:            Created in Pycharm, version control with Git
+#*****************************************************************************
+
+
+
 def main():
     import random   #brings in random module so cpu can select randomly
     score = 0  # Set score to 0
@@ -6,16 +23,20 @@ def main():
 
         choices = ["rock", "paper", "scissors"] #Set valid moves
 
-        comp_move = random.choice(choices)  #tells cpu to pick random from choices variable
+        # tells cpu to pick random from choices variable
+        comp_move = random.choice(choices)
+        # asks for input to set player_move
         player_move = input(str("Welcome to Rock, Paper, Scissors: Python Edition." 
-        " Which one will you choose?")) .lower()             #asks for input to set player_move
+        " Which one will you choose?")) .lower()
 
         #error handling
         if player_move not in choices:
-            print("That is an invalid entry. Please type 'Rock, Paper, or Scissors' and press enter.")
+            print("That is an invalid entry. "
+                  "Please type 'Rock, Paper, or Scissors' and press enter.")
             continue
 
-        print(f"AI Overlord chose: {comp_move}")  #f string allows me to call comp_move in string
+        # f string allows me to call comp_move in string
+        print(f"AI Overlord chose: {comp_move}")
 
         #handle ties
         if player_move == comp_move:
@@ -35,7 +56,8 @@ def main():
 
         #error handling loop again
         while True:
-            play_again = input("Would you like to play again? Please Enter Yes or No:") .lower()
+            play_again = input("Would you like to play again? "
+                               "Please Enter Yes or No:") .lower()
             if play_again == "yes":
                 break
 
@@ -49,7 +71,7 @@ def main():
 
             else:
                 print("Invalid entry. Please type 'Yes' or 'No'")
-                continue
+                continue #back to top of inner loop
 
 
 
